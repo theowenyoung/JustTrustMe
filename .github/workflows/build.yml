@@ -19,10 +19,10 @@ jobs:
       - name: "Build Android project"
         uses: vgaidarji/android-github-actions-build@v1.0.1
         with:
-          args: "./gradlew assembleRelease"
+          args: "./gradlew bundle"
       - run: ls -l app/build/outputs/apk
       - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
             name: app
-            path: app/build/outputs/apk/app-release-unsigned.apk
+            path: app/build/outputs/apk/debug/app-debug.apk
